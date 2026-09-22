@@ -1,0 +1,482 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: Georgia, "Times New Roman", serif;
+    background: #020617;
+}
+
+
+/* =========================
+   ESCENAS
+========================= */
+
+.scene {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:
+        radial-gradient(circle at 50% 30%, #172554 0%, #020617 65%);
+    z-index: 10;
+    transition: opacity 1.5s ease, visibility 1.5s ease;
+}
+
+.intro.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+
+/* =========================
+   ESTRELLAS
+========================= */
+
+.stars {
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle, white 1px, transparent 1px),
+        radial-gradient(circle, white 1px, transparent 1px);
+    background-size: 90px 90px, 140px 140px;
+    background-position: 10px 20px, 50px 70px;
+    opacity: 0.55;
+}
+
+
+/* =========================
+   LUNA
+========================= */
+
+.moon {
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: #fff7c2;
+    box-shadow:
+        0 0 30px rgba(255, 247, 194, 0.5),
+        0 0 70px rgba(255, 247, 194, 0.2);
+    top: 9%;
+    right: 12%;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro-content {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    color: white;
+}
+
+.intro-content h1 {
+    margin-top: 25px;
+    font-size: clamp(24px, 4vw, 42px);
+    font-weight: normal;
+}
+
+.intro-content p {
+    margin-top: 12px;
+    font-size: 18px;
+    opacity: 0.75;
+}
+
+
+/* =========================
+   FLOR PRINCIPAL
+========================= */
+
+.flower-big {
+    position: relative;
+    width: 150px;
+    height: 210px;
+    margin: auto;
+    cursor: pointer;
+    animation: floatFlower 3s ease-in-out infinite;
+}
+
+.stem {
+    position: absolute;
+    width: 8px;
+    height: 120px;
+    background: linear-gradient(to right, #365314, #65a30d);
+    left: 71px;
+    top: 80px;
+    border-radius: 10px;
+}
+
+.flower-head {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 10px;
+    left: 25px;
+}
+
+.flower-head span {
+    position: absolute;
+    width: 45px;
+    height: 65px;
+    background: #facc15;
+    border-radius: 50%;
+    left: 27px;
+    top: 17px;
+    transform-origin: 50% 85%;
+    box-shadow: 0 0 15px rgba(250, 204, 21, 0.5);
+}
+
+.flower-head span:nth-child(1) {
+    transform: rotate(0deg) translateY(-22px);
+}
+
+.flower-head span:nth-child(2) {
+    transform: rotate(60deg) translateY(-22px);
+}
+
+.flower-head span:nth-child(3) {
+    transform: rotate(120deg) translateY(-22px);
+}
+
+.flower-head span:nth-child(4) {
+    transform: rotate(180deg) translateY(-22px);
+}
+
+.flower-head span:nth-child(5) {
+    transform: rotate(240deg) translateY(-22px);
+}
+
+.flower-head span:nth-child(6) {
+    transform: rotate(300deg) translateY(-22px);
+}
+
+.flower-center {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    background: #92400e;
+    border-radius: 50%;
+    top: 39px;
+    left: 54px;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes floatFlower {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+/* =========================
+   JARDÍN
+========================= */
+
+.garden {
+    opacity: 0;
+    visibility: hidden;
+    background: #020617;
+    transition: opacity 1.5s ease;
+}
+
+.garden.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sky {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            to bottom,
+            #020617 0%,
+            #0f172a 45%,
+            #172554 75%,
+            #365314 100%
+        );
+}
+
+
+/* =========================
+   MONTAÑAS
+========================= */
+
+.mountains {
+    position: absolute;
+    bottom: 25%;
+    left: 0;
+    width: 100%;
+    height: 35%;
+    background:
+        linear-gradient(
+            135deg,
+            transparent 35%,
+            #0f172a 36%,
+            #0f172a 60%,
+            transparent 61%
+        ),
+        linear-gradient(
+            45deg,
+            transparent 40%,
+            #111827 41%,
+            #111827 65%,
+            transparent 66%
+        );
+    opacity: 0.9;
+}
+
+
+/* =========================
+   NIEBLA
+========================= */
+
+.mist {
+    position: absolute;
+    bottom: 24%;
+    left: -10%;
+    width: 120%;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.08);
+    filter: blur(25px);
+}
+
+
+/* =========================
+   CAMPO
+========================= */
+
+.field {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 35%;
+    background:
+        linear-gradient(
+            to bottom,
+            #365314,
+            #1a2e05
+        );
+}
+
+.flowers {
+    position: absolute;
+    inset: 0;
+}
+
+
+/* =========================
+   CONTENIDO
+========================= */
+
+.garden-content {
+    position: absolute;
+    z-index: 10;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    width: 90%;
+    max-width: 700px;
+}
+
+.small-text {
+    font-size: 18px;
+    opacity: 0.7;
+}
+
+.garden-content h1 {
+    margin-top: 12px;
+    font-size: clamp(38px, 7vw, 70px);
+    font-weight: normal;
+    text-shadow:
+        0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.subtitle {
+    margin-top: 12px;
+    font-size: 20px;
+    opacity: 0.85;
+}
+
+.garden-content button {
+    margin-top: 30px;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 30px;
+    background: #facc15;
+    color: #422006;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(250, 204, 21, 0.35);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.garden-content button:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 30px rgba(250, 204, 21, 0.6);
+}
+
+
+/* =========================
+   CARTA
+========================= */
+
+.letter-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(8px);
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease;
+}
+
+.letter-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.letter {
+    position: relative;
+    width: min(650px, 95vw);
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 45px 40px;
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffdf5,
+            #fff8dc
+        );
+
+    color: #422006;
+
+    box-shadow:
+        0 20px 80px rgba(0, 0, 0, 0.5);
+
+    animation: letterOpen 0.5s ease;
+}
+
+@keyframes letterOpen {
+    from {
+        transform: scale(0.8) translateY(30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+.letter-flower {
+    font-size: 45px;
+    text-align: center;
+}
+
+.letter h2 {
+    text-align: center;
+    font-size: 32px;
+    margin: 10px 0 25px;
+}
+
+.letter p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+
+.signature {
+    text-align: right;
+    font-style: italic;
+    margin-top: 30px;
+}
+
+.close-letter {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    background: transparent;
+
+    font-size: 32px;
+    color: #78350f;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+
+    .moon {
+        width: 75px;
+        height: 75px;
+        right: 8%;
+    }
+
+    .intro-content h1 {
+        padding: 0 20px;
+    }
+
+    .garden-content {
+        top: 35%;
+    }
+
+    .garden-content h1 {
+        font-size: 44px;
+    }
+
+    .subtitle {
+        font-size: 17px;
+    }
+
+    .letter {
+        padding: 35px 25px;
+    }
+
+    .letter p {
+        font-size: 16px;
+    }
+}
