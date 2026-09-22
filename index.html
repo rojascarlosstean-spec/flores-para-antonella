@@ -1,134 +1,82 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para Antonella 🌻</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080a1c">
+<title>Para Antonella 🌻</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+<main id="intro" class="scene intro-scene">
+  <div class="stars stars-a"></div><div class="stars stars-b"></div>
+  <div class="moon moon-intro"><span class="moon-crater crater-1"></span><span class="moon-crater crater-2"></span><span class="moon-crater crater-3"></span></div>
+  <div class="intro-vignette"></div>
+  <div class="intro-content">
+    <p class="small-text">Hay algo que quiero mostrarte...</p>
+    <button id="flowerButton" class="flower-button" aria-label="Entrar al jardín">
+      <span class="flower-aura"></span><span class="stem"></span><span class="leaf leaf-left"></span><span class="leaf leaf-right"></span>
+      <span class="flower"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span>
+      <span class="flower-center"></span>
+    </button>
+    <p class="click-text">Toca la flor</p>
+  </div>
+</main>
 
-    <div class="scene intro" id="intro">
+<main id="garden" class="scene garden-scene hidden">
+  <div id="skyParticles" class="particle-layer"></div><div id="fireflies" class="firefly-layer"></div><div id="petals" class="petal-layer"></div>
+  <div class="garden-sky">
+    <div class="moon moon-garden"><span class="moon-crater crater-1"></span><span class="moon-crater crater-2"></span><span class="moon-crater crater-3"></span></div>
+    <div class="mountain mountain-back"></div><div class="mountain mountain-mid"></div><div class="mountain mountain-front"></div>
+    <div class="mist mist-one"></div><div class="mist mist-two"></div>
+  </div>
 
-        <div class="stars"></div>
+  <div class="garden-title">
+    <p class="garden-subtitle">Bienvenida a mi pequeño mundo...</p>
+    <h1>Para <span>Antonella</span></h1>
+    <div class="divider"><span></span>✦<span></span></div>
+    <p class="garden-text">Algunas flores necesitan del sol para florecer...<br>pero esta noche, este jardín floreció por ti.</p>
+    <button id="letterButton" class="gold-button"><span>🌻</span> Abrir mi dedicatoria</button>
+  </div>
 
-        <div class="moon"></div>
+  <div class="field"><div class="field-glow"></div><div class="flower-row row-back" id="flowersBack"></div><div class="flower-row row-mid" id="flowersMid"></div><div class="flower-row row-front" id="flowersFront"></div></div>
+  <div class="garden-vignette"></div>
+</main>
 
-        <div class="intro-content">
-            <div class="flower-big" id="flowerButton">
-                <div class="stem"></div>
+<div id="letter" class="letter-overlay" aria-hidden="true">
+  <div class="letter-card">
+    <button id="closeLetter" class="close-letter" aria-label="Cerrar">×</button>
 
-                <div class="flower-head">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+    <div class="letter-flower">🌻</div>
+    <p class="letter-small">Para alguien muy especial...</p>
 
-                <div class="flower-center"></div>
-            </div>
+    <h2>Antonella ❤️</h2>
+    <div class="letter-line"></div>
 
-            <h1>Hay algo que quiero mostrarte...</h1>
-            <p>Toca la flor 🌻</p>
-        </div>
+    <p class="letter-text">
+      Pan, estas flores amarillas son para ti. 🌻
+    </p>
 
-    </div>
+    <p class="letter-text">
+      Quiero recordarte que te quiero muchísimo y que te aprecio mucho.
+      Esto es lo que te hice esperar, perdón por la espera,
+      pero quería hacerte algo bonito. ❤️
+    </p>
 
+    <p class="letter-text">
+      Desearía que estas flores fueran reales,
+      pero quizás en otro momento pueda darte unas flores bonitas,
+      así como lo eres tú y lo bonita que es tu persona. 🌻
+    </p>
 
-    <div class="scene garden" id="garden">
+    <p class="letter-final">
+      TQM, Pan :3 ❤️
+    </p>
 
-        <div class="sky"></div>
+    <p class="signature">— Esteban</p>
+  </div>
+</div>
 
-        <div class="stars"></div>
-
-        <div class="moon"></div>
-
-        <div class="mountains"></div>
-
-        <div class="mist"></div>
-
-        <div class="field">
-
-            <div class="flowers"></div>
-
-        </div>
-
-        <div class="fireflies"></div>
-
-        <div class="petals"></div>
-
-        <div class="garden-content">
-
-            <p class="small-text">
-                Bienvenida a mi pequeño mundo...
-            </p>
-
-            <h1>
-                Para Antonella
-            </h1>
-
-            <p class="subtitle">
-                Hice esto especialmente para ti 🌻
-            </p>
-
-            <button id="openLetter">
-                Abrir mi dedicatoria 💌
-            </button>
-
-        </div>
-
-    </div>
-
-
-    <div class="letter-overlay" id="letterOverlay">
-
-        <div class="letter">
-
-            <button class="close-letter" id="closeLetter">
-                ×
-            </button>
-
-            <div class="letter-flower">
-                🌻
-            </div>
-
-            <h2>
-                Antonella ❤️
-            </h2>
-
-            <p>
-                Pan, estas flores amarillas son para ti. 🌻
-            </p>
-
-            <p>
-                Quiero recordarte que te quiero muchísimo y que te aprecio mucho.
-                Esto es lo que te hice esperar, perdón por la espera,
-                pero quería hacerte algo bonito. ❤️
-            </p>
-
-            <p>
-                Desearía que estas flores fueran reales,
-                pero quizás en otro momento pueda darte unas flores bonitas,
-                así como lo eres tú y lo bonita que es tu persona. 🌻
-            </p>
-
-            <p>
-                TQM, Pan :3 ❤️
-            </p>
-
-            <p class="signature">
-                — Esteban
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <script src="script.js"></script>
-
+<script src="script.js"></script>
 </body>
 </html>
